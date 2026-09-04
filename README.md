@@ -39,6 +39,27 @@
 
 | 파일 | 역할 |
 | --- | --- |
-| `파일명.h/.cpp` | 한 줄 설명 |
-| `파일명.h/.cpp` | 한 줄 설명 |
-| `파일명.h/.cpp` | 한 줄 설명 |
+| `BrickGameInstance` | 레벨 전환에도 유지되어야 하는 세션·팀 데이터 보관 |
+| `BrickLobbyGameMode` / `BrickLobbyGameState` | 로비 접속·팀 선택·준비 상태 관리 |
+| `BrickInGameMode` / `BrickInGameState` | 경주 진행 규칙 처리, 각 PlayerState의 진행률을 집계해 순위 산출 |
+| `BrickGamePlayerState` | 팀·ID·진행률 등 플레이어별 데이터 보관, `CopyProperties` 오버라이드로 레벨 전환 간 값 유지 |
+| `BrickGamePlayerController` | 입력 처리 및 UI 연결 |
+| `BrickPlayerStart` | 팀별 스폰 위치 지정 |
+| `EGameTeam` | 팀 구분 열거형 |
+
+### UI
+
+| 파일 | 역할 |
+| --- | --- |
+| `ProgressBoard` | 네 명 전원의 실시간 진행률 표시. 팀 색상 구분 및 자기 위치 표시 |
+| `LobbyUserWidget` | 로비 화면. 접속 플레이어 목록 표시 |
+| `LobbyUserEntry` | 플레이어별 로비 항목. 소속 팀 선택 처리 |
+| `CountdownUserWidget` | 경주 시작 카운트다운 |
+
+### Props
+
+| 파일 | 역할 |
+| --- | --- |
+| `CheckPoint` | 구간별 리스폰 지점. 낙사해도 처음이 아닌 가까운 지점에서 재시작 |
+| `KillVolume` | 낙사 판정. 통과한 체크포인트로 리스폰 처리 |
+| `FinishGoalVolume` | 결승 지점 통과 판정 |
