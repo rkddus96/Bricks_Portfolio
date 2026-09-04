@@ -37,6 +37,8 @@
 
 ## 주요 파일
 
+###GameplayFramework
+
 | 파일 | 역할 |
 | --- | --- |
 | `BrickGameInstance` | 레벨 전환에도 유지되어야 하는 세션·팀 데이터 보관 |
